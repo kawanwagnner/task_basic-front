@@ -1,10 +1,12 @@
 import "./App.css";
 import "./assets/css/style.css";
 import Card from "./components/CardPayment";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <>
+      <Header />
       <Card
         namePage={"Detalhes de Pagamento"}
         name={"Nome (apelido do cartão)"}

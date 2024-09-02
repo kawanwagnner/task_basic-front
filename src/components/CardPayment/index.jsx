@@ -19,7 +19,7 @@ const Card = ({ namePage, name, numberCard, btnSubmitName, infoCheck }) => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Evita o envio do formulário
+    event.preventDefault();
 
     // Verifica se todos os campos estão preenchidos
     const form = event.target;
@@ -43,7 +43,7 @@ const Card = ({ namePage, name, numberCard, btnSubmitName, infoCheck }) => {
       };
 
       console.log("Seus dados: ", data);
-      // Aqui você pode adicionar a lógica para enviar os dados
+      form.reset();
     } else {
       console.log("Por favor, preencha todos os campos corretamente.");
     }
