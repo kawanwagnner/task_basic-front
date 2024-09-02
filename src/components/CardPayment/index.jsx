@@ -21,7 +21,6 @@ const Card = ({ namePage, name, numberCard, btnSubmitName, infoCheck }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Verifica se todos os campos estão preenchidos
     const form = event.target;
     const name = form.name.value;
     const ccMonth = form.cc_month.value;
@@ -32,7 +31,6 @@ const Card = ({ namePage, name, numberCard, btnSubmitName, infoCheck }) => {
     if (name && ccNumber && ccMonth && ccYear && ccCvc && ccType && saveCc) {
       console.log("Todos os dados estão corretos!");
 
-      console.log("==============================");
       const data = {
         name: name,
         ccNumber: ccNumber,
@@ -43,7 +41,13 @@ const Card = ({ namePage, name, numberCard, btnSubmitName, infoCheck }) => {
       };
 
       console.log("Seus dados: ", data);
+
+      // Reseta o formulário
       form.reset();
+
+      // Limpa o estado do ccNumber e ccType
+      setCcNumber("");
+      setCcType("");
     } else {
       console.log("Por favor, preencha todos os campos corretamente.");
     }
